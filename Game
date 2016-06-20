@@ -8,7 +8,7 @@ public class Game1{
     String name = a.nextLine();
     Player p1 = new Player(name);
     System.out.println("Boss : " + name + " you were a good worker, I am sad you are leaving the company. Good luck on becoming a monk.");
-    System.out.println("* Don't have over Two Temple  ->  invalidity  (bribery charges) ");
+    System.out.println("* Do not buy more than 2 each temple  ->  Invalidity, Admit 1 temple (bribery charges) ");
     //int -> Game setting
     int choice;
     int total_money = 100;
