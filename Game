@@ -1,16 +1,113 @@
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 public class Game1{
-  pulic static void main(String arg[]){
-  }
-  public class int Game{
-  
-  
-  
-  
-  
-  
-  
-  dadfasdf
+  public static void main(String[] args){
+    Scanner a = new Scanner(System.in);
+    System.out.println("What is your name?");
+    String name = a.nextLine();
+    Player p1 = new Player(name);
+    System.out.println("Boss : " + name + " you were a good worker, I am sad you are leaving the company. Good luck on becoming a monk.");
+    System.out.println("* Don't have over Two Temple  ->  invalidity  (bribery charges) ");
+    //int -> Game setting
+    int choice;
+    int total_money = 100;
+    int zen = 0;
+    int count = 0;
+    int big = 0;
+    int small = 0;
+    //Main loop
+    while(zen < 100){
+      count ++;
+      System.out.println("You have $ " + total_money + " and " + zen + " zen points");
+      System.out.println("");
+      System.out.println("What would you like to do?");
+      System.out.println("Press 1  ->  Meditate 0$");
+      System.out.println("Press 2  ->  Help Someone -10$");
+      System.out.println("Press 3  ->  Work at company +$50, -30 Zen");
+      System.out.println("Press 4  ->  Purchase Temple");
+      System.out.println("Press 5  ->  Gamble, get random money");
+      Scanner b = new Scanner(System.in);
+      choice = b.nextInt();
+      if(choice == 1){
+        int zen1 = 1;
+        zen = zen + zen1;
+      }
+      if(choice == 2){
+        int money2 = -10;
+        int zen2 = 5;
+        total_money = total_money + money2;
+        zen = zen + zen2;
+      }
+      if(choice == 3){
+        int money3 = +50;
+        int zen3 = -30;
+        total_money = total_money + money3;
+        zen = zen + zen3;
+      }
+      if(choice == 4){
+        System.out.println(" ");
+        System.out.println("What do you want to call your temple");
+        Scanner p = new Scanner(System.in);
+        String temple_name = p.nextLine();
+        System.out.println(" ");
+        System.out.println("A big temple generates $15 and 5 zen each turn.");
+        System.out.println("A small temple generates 3 zen each turn.");
+        System.out.println("Do you want a big (-$70, press 1) or small (-$30, press 2) temple?");
+        Scanner q = new Scanner(System.in);
+        int selection = q.nextInt();
+        if(selection == 1){
+          int temple1 = -70;
+          total_money = total_money + temple1;
+          int big1 = 1;
+          big = big + big1;
+          System.out.println("Collecting from all temples " + temple_name + "!");
+          Temple big_temple = new Temple(temple_name);
+          int money4 = 15;
+          int zen41 = 5;
+          total_money = total_money + money4;
+          zen = zen + zen41;
+        }
+        if(selection == 2){
+          int temple2 = -30;
+          total_money = total_money + temple2;
+          int small1 = 1;
+          small = small + small1;
+          System.out.println("Collecting from all temples " + temple_name + "!");
+          Temple small_temple = new Temple(temple_name);
+          int zen42 = 3;
+          zen = zen + zen42;
+        }
+        else{
+          continue;
+        }
+      }
+      if(choice == 5){
+        int total_money5 = -20;
+        int zen5 = -5;
+        int gamble = (int) (Math.random()*50);
+        total_money = total_money + total_money5;
+        total_money = total_money + gamble;
+        zen = zen + zen5;
+      }
+      System.out.println(" ");
+      System.out.println("Collecting from all temples" + "");
+      if(big > 0){
+        int money4 = 15;
+        int zen41 = 5;
+        total_money = total_money + money4;
+        zen = zen + zen41;
+      }
+      if(small > 0){
+        int zen42 = 3;
+        zen = zen + zen42;
+      }
+      System.out.println("Done collecting from temples" + "");
+      System.out.println(" ");
+    }
+    //Game end, Count a turn
+    if(zen >= 100){
+      System.out.println("Congrats, you became a master monk in " + count+ " turns.");
+    }
   }
 }
