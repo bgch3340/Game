@@ -93,14 +93,14 @@ public class Game1{
       System.out.println(" ");
       System.out.println("Collecting from all temples" + "");
       if(big > 0){
-        int money4 = 15;
-        int zen41 = 5;
-        total_money = total_money + money4;
-        zen = zen + zen41;
+        int money41 = 15;
+        int zen411 = 5;
+        total_money = total_money + money41;
+        zen = zen + zen411;
       }
       if(small > 0){
-        int zen42 = 3;
-        zen = zen + zen42;
+        int zen422 = 3;
+        zen = zen + zen422;
       }
       System.out.println("Done collecting from temples" + "");
       System.out.println(" ");
