@@ -5,3 +5,16 @@ public class Temple{
     this.name = name;
   }
 }
+//Don't Repeat Yourself (D.R.Y)
+class big_Temple extends Temple{
+  public big_Temple(String name){
+    super(name);
+    
+  }
+}
+class small_Temple extends Temple{
+  public small_Temple(String name){
+    super(name);
+    
+  }
+}
